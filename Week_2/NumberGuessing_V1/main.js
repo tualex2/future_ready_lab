@@ -9,26 +9,35 @@ alert("Enter 2 numbers between 0 and 1000 as the lower and higher bounds. Then g
 var from = parseInt(prompt("Enter the lower bound."));
 //from is within correct range
 
-while(!isNaN(from)){
-    while(from < 0 || from == 1000 || from > 1000){
+
+while(isNaN(from) || from < 0 || from == 1000 || from > 1000){
+    while(isNaN(from)){
+        if(isNaN(from))
+            from = parseInt(prompt("Enter a number as the lower bound."));
+    }
     while(from < 0){
         if(from < 0){
-    from = parseInt(prompt("Enter a number at least 0 as the lower bound."))
+    from = parseInt(prompt("Enter a number at least 0 as the lower bound."));
 }}
     while(from == 1000){
         if(from == 1000){
-    from = parseInt(prompt("Enter a number less than 1000 as the lower bound."))
+    from = parseInt(prompt("Enter a number less than 1000 as the lower bound."));
 }}
     while(from > 1000){
         if(from > 1000){
     from = parseInt(prompt("Enter a number less than 1000 as the lower bound."))
 }}}
-}
+
 
 var to = parseInt(prompt("Enter the higher bound."));
 //get the higher bound(max 1000) greater than lower bound
 
-    while(to < from || to == from || to > 1000){
+    while(isNaN(to) || to < from || to == from || to > 1000){
+    while(isNaN(to)){
+        if(isNaN(to)){
+            to = parseInt(prompt("Enter a number as the upper bound."));
+        }
+    }
     while(to < from){
         if(to < from){
     to = parseInt(prompt("Enter a number higher than the lower bound as the higher bound."));
@@ -49,18 +58,25 @@ var to = parseInt(prompt("Enter the higher bound."));
 var target = Math.round(Math.random() * (to - from) + from);
 
 var currentGuess = parseInt(prompt("Guess a number between " + from + " and " + to));
-while(currentGuess>to){
+while(currentGuess>to || currentGuess<from || isNaN(currentGuess)){
+    while(isNaN(currentGuess)){
+        if(isNaN(currentGuess)){
+            currentGuess = parseInt(prompt("Guess a number between " + from + " and " + to));
+        }
+    }
+    while(currentGuess>to){
     if(currentGuess>to){
     currentGuess = parseInt(prompt("Guess a number between " + from + " and " + to))
         
         totalGuesses++;
 }
 }
-while(currentGuess<from){
+    while(currentGuess<from){
     if(currentGuess<from){
     currentGuess = parseInt(prompt("Guess a number between " + from + " and " + to))
         
         totalGuesses++;
+}
 }
 }
     
