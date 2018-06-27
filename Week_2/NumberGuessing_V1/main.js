@@ -36,7 +36,10 @@ var totalGuesses = 1;
 
 //loop until user guesses target
 while(currentGuess != target || currentGuess>to || currentGuess<from || isNaN(currentGuess)){
-      if(currentGuess < target){
+        if(currentGuess>to || currentGuess<from || isNaN(currentGuess)){
+        currentGuess = parseInt(prompt("Guess a number between " + from + " and " + to));
+    }
+    if(currentGuess < target){
     currentGuess = parseInt(prompt("Guess a higher number"));
     
     totalGuesses++;
@@ -46,9 +49,7 @@ while(currentGuess != target || currentGuess>to || currentGuess<from || isNaN(cu
     
     totalGuesses++;
     }
-    else if(currentGuess>to || currentGuess<from || isNaN(currentGuess)){
-        currentGuess = parseInt(prompt("Guess a number between " + from + " and " + to));
-    }
+
 }
 if(currentGuess == target){
     if(totalGuesses != 1){
