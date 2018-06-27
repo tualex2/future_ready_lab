@@ -28,26 +28,14 @@ while(isNaN(to) || to < from || to == from || to > 1000){
 //Math.random() returns decimals, Math.round() to get integers
 var target = Math.round(Math.random() * (to - from) + from);
 
-
     
-    
+//
 var currentGuess = parseInt(prompt("Guess a number between " + from + " and " + to));
-while(currentGuess>to || currentGuess<from || isNaN(currentGuess)){
-    while(isNaN(currentGuess)){
-            currentGuess = parseInt(prompt("Guess a number between " + from + " and " + to));
-    }
-    while(currentGuess>to){
-        currentGuess = parseInt(prompt("Guess a number between " + from + " and " + to))
-
-}
-    while(currentGuess<from){
-        currentGuess = parseInt(prompt("Guess a number between " + from + " and " + to))
-}}
 
 var totalGuesses = 1;
 
 //loop until user guesses target
-while(currentGuess != target){
+while(currentGuess != target || currentGuess>to || currentGuess<from || isNaN(currentGuess)){
       if(currentGuess < target){
     currentGuess = parseInt(prompt("Guess a higher number"));
     
@@ -57,6 +45,9 @@ while(currentGuess != target){
     currentGuess = parseInt(prompt("Guess a lower number"));
     
     totalGuesses++;
+    }
+    else if(currentGuess>to || currentGuess<from || isNaN(currentGuess)){
+        currentGuess = parseInt(prompt("Guess a number between " + from + " and " + to));
     }
 }
 if(currentGuess == target){
