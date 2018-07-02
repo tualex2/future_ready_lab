@@ -8,10 +8,12 @@ var circle = {
     ySpeed: 10,//vertical speed
 }
 
+//randomizes the color of the circle
 function randomColor(){
     circle.color = [random(0,255),random(0,255),random(0,255)];
 }
 
+//randomizes the size of circle
 function randomSize(){
     circle.diameter = random(1,100);
 }
@@ -23,6 +25,7 @@ function setup() {
     frameRate(15);
 }
 
+//animates the circle
 function draw() {
     fill(circle.color);
     ellipse(circle.xCoor, circle.yCoor, circle.diameter);
