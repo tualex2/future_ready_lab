@@ -8,9 +8,13 @@ var circle = {
     ySpeed: 10,//vertical speed
 }
 
+function randomColor(){
+    circle.color = [random(0,255),random(0,255),random(0,255)];
+}
 
-
-
+function randomSize(){
+    circle.diameter = random(1,100);
+}
 
 //setup is run once at the beginning before we draw
 function setup() {
@@ -22,23 +26,23 @@ function setup() {
 function draw() {
     fill(circle.color);
     ellipse(circle.xCoor, circle.yCoor, circle.diameter);
-   
+    
     //if the xCoor of circle is greater than the length of the canvas, bounce back
     if(circle.xCoor > 640){
-        circle.color = [random(0,255),random(0,255),random(0,255)];//color is random
+        randomColor();//color is random
         circle.xSpeed = -circle.xSpeed;    
     }else if(circle.xCoor < 0){
-        circle.color = [random(0,255),random(0,255),random(0,255)]
+        randomColor();//color is random
         circle.xSpeed = -circle.xSpeed;
     }
     circle.xCoor += circle.xSpeed;
 
     //if the yCoor of circle is greater than length of canvas, bounce back
     if(circle.yCoor > 480){
-        circle.diameter = random(1,100)//changes size when 
+        randomSize();//changes size randomly
         circle.ySpeed = -circle.ySpeed;
     }else if(circle.yCoor < 0){
-        circle.diameter = random(1,100)
+        randomSize();//changes size randomly
         circle.ySpeed = -circle.ySpeed;
     }
     circle.yCoor += circle.ySpeed;
