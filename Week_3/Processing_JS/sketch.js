@@ -9,14 +9,15 @@ var circle = {
     ySpeed: 10,//vertical speed
 }
 */
+
 function Ball(x,y,diameter, color, xSpeed, ySpeed){
     //this is a keyword that refers to the individual object
     this.xCoor = x; //starting x coordinate
     this.yCoor = y; //starting y coordinate
     this.diameter = diameter; //size of ball
-    this.color = color; // "||" makes default color black
-    this.xSpeed = xSpeed; //default horizontal speed 10
-    this.ySpeed = ySpeed; //default vertical speed 10
+    this.color = color; 
+    this.xSpeed = xSpeed;
+    this.ySpeed = ySpeed;
 }
 
 function numberSet(set){
@@ -25,11 +26,9 @@ function numberSet(set){
 }
 
 var ballAmount = numberSet([2,5,9,16]);//set of possible number of balls
-
 var ballList = [];//empty array for Balls to be added
-
 for(var c=0; c<ballAmount; c++){
-    var ball = new Ball(0,0,80,[0,0,0],Math.floor(Math.random()*100),Math.floor(Math.random()*100));
+    var ball = new Ball(Math.random()*100,Math.random()*100,80,[0,0,0],Math.floor(Math.random()*100),Math.floor(Math.random()*100));//randomizes size, and speed of balls
     ballList = ballList.concat([ball]);
 }
 
@@ -49,10 +48,14 @@ function setup() {
 
 //animates the circle
 function draw() {
-    background([0,0,255]);
+    background([0,0,255]);//makes background blue after every draw so no trail is left
     for(var i=0; i < ballList.length; i++){
-        fill(ballList[i].color);
+        fill(ballList[i].color);//ball color
         ellipse(ballList[i].xCoor, ballList[i].yCoor, ballList[i].diameter);
+
+        
+        
+        
         if(ballList[i].xCoor > width){//if xCoor is too far to the right
             ballList[i].color = randomColor();//color is random
             ballList[i].xSpeed = -ballList[i].xSpeed;//change direction
@@ -60,7 +63,7 @@ function draw() {
             ballList[i].color = randomColor();//color is random
             ballList[i].xSpeed = -ballList[i].xSpeed;//change direction
         }
-        ballList[i].xCoor += ballList[i].xSpeed;
+        ballList[i].xCoor += ballList[i].xSpeed;//moves ball horizontally
 
         if(ballList[i].yCoor > height){//if yCoor is too far up
             ballList[i].diameter = randomNumber();//changes size randomly
@@ -69,7 +72,7 @@ function draw() {
             ballList[i].diameter = randomNumber();//changes size randomly
             ballList[i].ySpeed = -ballList[i].ySpeed;//change direction
         }
-        ballList[i].yCoor += ballList[i].ySpeed;
+        ballList[i].yCoor += ballList[i].ySpeed;//moves ball vertically
         
     }
 }
