@@ -71,6 +71,18 @@ function draw() {//animates circle
             ballList[i].ySpeed = -ballList[i].ySpeed;//change direction
         }
         
+        if(ballList[i].xCoor<0 && ballList[i].xSpeed<0){//if ball is off the screen and moving away from screen
+            ballList[i].xSpeed = -ballList[i].xSpeed;//change direction to get back onto canvas
+        }
+        if(ballList[i].yCoor<0 && ballList[i].ySpeed<0){//if ball is off the screen and moving away from screen
+            ballList[i].ySpeed = -ballList[i].ySpeed;//change direction to get back onto canvas
+        }
+        if(ballList[i].xCoor>width && ballList[i].xSpeed>0){//if ball is off the screen and moving away from screen
+            ballList[i].xSpeed = -ballList[i].xSpeed;//change direction to get back onto canvas
+        }
+        if(ballList[i].yCoor>height && ballList[i].ySpeed>0){//if ball is off the screen and moving away from screen
+            ballList[i].ySpeed = -ballList[i].ySpeed;//change direction to get back onto canvas
+        }
 
        
         for(var diff1Ball=0;diff1Ball<ballList.length;diff1Ball++){//identifies a single ball
