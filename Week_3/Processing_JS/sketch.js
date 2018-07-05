@@ -99,10 +99,10 @@ function draw() {//animates circle
                     }
 
                     if(rightBall.xSpeed<0){
-                        rightBall.xSpeed = -rightBall.xSpeed;//change direction
+                        rightBall.xSpeed = -2 * rightBall.xSpeed;//change direction
                     }
                     if(leftBall.xSpeed>0){
-                        leftBall.xSpeed = -leftBall.xSpeed;//change direction
+                        leftBall.xSpeed = -2 * leftBall.xSpeed;//change direction
                     }
 
                     var higherBall = ballList[diff1Ball];
@@ -113,16 +113,24 @@ function draw() {//animates circle
                         lowerBall = ballList[diff1Ball];//redefine variable
                     }
                     if(higherBall.ySpeed<0){
-                        higherBall.ySpeed = -higherBall.ySpeed;//change direction
+                        higherBall.ySpeed = -2 * higherBall.ySpeed;//change direction
                     }
                     if(lowerBall.ySpeed>0){
-                        lowerBall.ySpeed = -lowerBall.ySpeed;//change direction
+                        lowerBall.ySpeed = -2 * lowerBall.ySpeed;//change direction
                     }
+                    
+                    
                 }
             }
         }
         
-        
+        if(ballList[i].xSpeed>=20){//if the ball exceeds a certain xSpeed
+            ballList[i].xSpeed = random(10,20);//the speed decreases to a random number
+        }
+        if(ballList[i].ySpeed>=20){//if the ball exceeds a certain ySpeed
+            ballList[i].ySpeed = random(10,20);//the speed decreases to a random number
+        }
+       
         
         ballList[i].yCoor += ballList[i].ySpeed;//moves ball vertically
         ballList[i].xCoor += ballList[i].xSpeed;//moves ball horizontally
