@@ -93,7 +93,6 @@ function draw() {//animates circle
             for(var diff2Ball=diff1Ball+1;diff2Ball<ballList.length;diff2Ball++){//identifies another ball
                 
                 if(touching(ballList[diff1Ball],ballList[diff2Ball])){
-                    if(ballList[diff1Ball].xSpeed == -ballList[diff2Ball].xSpeed && ballList[diff1Ball.ySpeed == -ballList[diff2Ball].ySpeed]){//if the 2 balls are colliding face to face
                         var rightBall = ballList[diff1Ball];//make variable
                         var leftBall = ballList[diff2Ball];//make variable
 
@@ -122,7 +121,7 @@ function draw() {//animates circle
                         if(lowerBall.ySpeed>0){
                             lowerBall.ySpeed = -(higherBall.ySpeed + lowerBall.ySpeed)/2;//change direction and averages speed
                         }
-                    }else{//if the two balls hit sides
+                    if(ballList[diff1Ball].xSpeed != -ballList[diff2Ball].xSpeed && ballList[diff1Ball.ySpeed != -ballList[diff2Ball].ySpeed]){//if the 2 balls are not colliding face to face, ie they hit on the side
                         var rightBall = ballList[diff1Ball];//make variable
                         var leftBall = ballList[diff2Ball];//make variable
 
