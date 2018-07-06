@@ -156,30 +156,30 @@ function draw() {//animates circle
             }
         }
         
-        if(ballList[i].xSpeed>=25){//if the ball exceeds a certain xSpeed
-            ballList[i].xSpeed = random(5,15);//the speed decreases to a random number
+        if(ballList[i].xSpeed>=50){//if the ball exceeds a certain xSpeed
+            ballList[i].xSpeed = random(5,40);//the speed decreases to a random number
         }
-        if(ballList[i].ySpeed>=25){//if the ball exceeds a certain ySpeed
-            ballList[i].ySpeed = random(5,15);//the speed decreases to a random number
+        if(ballList[i].ySpeed>=50){//if the ball exceeds a certain ySpeed
+            ballList[i].ySpeed = random(5,40);//the speed decreases to a random number
         }
-        if(ballList[i].xSpeed<10 && ballList[i].xSpeed>0){//if the ball decreases to a certain xSpeed
-            ballList[i].xSpeed = random(5,15);//the speed decreases to a random number
+        if(ballList[i].xSpeed<4 && ballList[i].xSpeed>0){//if the ball decreases to a certain xSpeed
+            ballList[i].xSpeed = random(5,40);//the speed decreases to a random number
         }
-        if(ballList[i].ySpeed<10 && ballList[i].ySpeed>0){//if the ball decreases to a certain ySpeed
-            ballList[i].ySpeed = random(5,15);//the speed decreases to a random number
+        if(ballList[i].ySpeed<4 && ballList[i].ySpeed>0){//if the ball decreases to a certain ySpeed
+            ballList[i].ySpeed = random(5,40);//the speed decreases to a random number
         }
         
-        if(ballList[i].xSpeed>-10 && ballList[i].xSpeed<0){//if the ball decreases to a certain xSpeed
-            ballList[i].xSpeed = -random(5,15);//the speed decreases to a random number
+        if(ballList[i].xSpeed>-4 && ballList[i].xSpeed<0){//if the ball decreases to a certain xSpeed
+            ballList[i].xSpeed = -random(5,40);//the speed decreases to a random number
         }
-        if(ballList[i].ySpeed>-10 && ballList[i].ySpeed<0){//if the ball decreases to a certain ySpeed
-            ballList[i].ySpeed = -random(5,15);//the speed decreases to a random number
+        if(ballList[i].ySpeed>-4 && ballList[i].ySpeed<0){//if the ball decreases to a certain ySpeed
+            ballList[i].ySpeed = -random(5,40);//the speed decreases to a random number
         }
-        if(ballList[i].xSpeed<-25 && ballList[i].xSpeed<0){//if the ball decreases to a certain xSpeed
-            ballList[i].xSpeed = -random(5,15);//the speed decreases to a random number
+        if(ballList[i].xSpeed<-50 && ballList[i].xSpeed<0){//if the ball decreases to a certain xSpeed
+            ballList[i].xSpeed = -random(5,40);//the speed decreases to a random number
         }
-        if(ballList[i].ySpeed<-25 && ballList[i].ySpeed<0){//if the ball decreases to a certain ySpeed
-            ballList[i].ySpeed = -random(5,15);//the speed decreases to a random number
+        if(ballList[i].ySpeed<-50 && ballList[i].ySpeed<0){//if the ball decreases to a certain ySpeed
+            ballList[i].ySpeed = -random(5,40);//the speed decreases to a random number
         }
        
         
