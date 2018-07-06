@@ -190,18 +190,18 @@ function draw() {//animates circle
     }
 }
 
-function touching(ball1,ball2){
-    var radius = ball1.diameter/2 + ball2.diameter/2;
-    var distanceBtwnCenters = distance(ball1.xCoor,ball1.yCoor,ball2.xCoor,ball2.yCoor);
-    if(distanceBtwnCenters<=radius){
+function touching(ball1,ball2){//fucntion for if the 2 different balls touch
+    var radius = ball1.diameter/2 + ball2.diameter/2;//the sum of their 2 radii
+    var distanceBtwnCenters = distance(ball1.xCoor,ball1.yCoor,ball2.xCoor,ball2.yCoor);//pythaogrean thm for distance between centers
+    if(distanceBtwnCenters<=radius){//if they are touching
         return true
     }else{
         return false
     }
 }
 
-function distance(x1,y1,x2,y2){
-    return Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2));
+function distance(x1,y1,x2,y2){//calculate distance between the 2 balls
+    return Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2));//pythag thm
 }
 
 function randomColor(){//randomizes the color of the circle
